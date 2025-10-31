@@ -1,0 +1,338 @@
+<!-- Landing page for FastCharge Supply -->
+<div style="font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial; color:#0f172a; line-height:1.6;">
+  <!-- Header (100px) -->
+  <header style="position:sticky; top:0; z-index:20; background:linear-gradient(90deg,#1e3a8a,#153074); color:#f8fafc;">
+    <div style="height:100px; display:flex; align-items:center; justify-content:space-between; padding:0 16px; max-width:1200px; margin:0 auto;">
+      <div style="display:flex; align-items:center; gap:20px; white-space:nowrap;">
+        <span style="font-weight:800; letter-spacing:0.6px; font-size:18px;">FASTCHARGE SUPPLY</span>
+        <nav class="nav-desktop" style="display:flex; gap:18px; align-items:center; white-space:nowrap;">
+          <a href="#products" (click)="$event.preventDefault(); scrollTo('products')" style="text-decoration:none; color:#e2e8f0; font-weight:500;">Products</a>
+          <a href="#compatibility" (click)="$event.preventDefault(); scrollTo('compatibility')" style="text-decoration:none; color:#e2e8f0; font-weight:500;">Compatibility</a>
+          <a href="#bundles" (click)="$event.preventDefault(); scrollTo('bundles')" style="text-decoration:none; color:#e2e8f0; font-weight:500;">Bundles</a>
+          <a href="#shipping" (click)="$event.preventDefault(); scrollTo('shipping')" style="text-decoration:none; color:#e2e8f0; font-weight:500;">Shipping</a>
+          <a href="#testimonials" (click)="$event.preventDefault(); scrollTo('testimonials')" style="text-decoration:none; color:#e2e8f0; font-weight:500;">Testimonials</a>
+        </nav>
+      </div>
+      <!-- Burger (anchor, not a button) for mobile -->
+      <a class="burger" href="#menu" (click)="$event.preventDefault(); toggleMenu()" style="display:none; font-size:26px; line-height:1; color:#f8fafc; text-decoration:none;">&#9776;</a>
+    </div>
+    <!-- Mobile menu card -->
+    <div class="mobile-menu" [style.display]="mobileMenuOpen ? 'block' : 'none'" style="position:absolute; left:0; right:0; background:#ffffff; color:#0f172a; box-shadow:0 14px 30px rgba(2,6,23,0.18); border-bottom:1px solid #e5e7eb;">
+      <div style="max-width:1200px; margin:0 auto; padding:12px 16px; display:flex; flex-direction:column; gap:8px;">
+        <a href="#products" (click)="$event.preventDefault(); scrollTo('products')" style="text-decoration:none; color:#0f172a; font-weight:600;">Products</a>
+        <a href="#compatibility" (click)="$event.preventDefault(); scrollTo('compatibility')" style="text-decoration:none; color:#0f172a; font-weight:600;">Compatibility</a>
+        <a href="#bundles" (click)="$event.preventDefault(); scrollTo('bundles')" style="text-decoration:none; color:#0f172a; font-weight:600;">Bundles</a>
+        <a href="#shipping" (click)="$event.preventDefault(); scrollTo('shipping')" style="text-decoration:none; color:#0f172a; font-weight:600;">Shipping</a>
+        <a href="#testimonials" (click)="$event.preventDefault(); scrollTo('testimonials')" style="text-decoration:none; color:#0f172a; font-weight:600;">Testimonials</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" style="background:linear-gradient(180deg,#eef2ff,#ffffff); padding:56px 16px;">
+    <mat-card style="max-width:1100px; margin:0 auto; padding:32px; border-radius:16px; box-shadow:0 10px 30px rgba(2,6,23,0.08);">
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between;">
+        <div style="flex:1 1 460px;">
+          <h1 style="margin:0 0 12px 0; font-size:40px; line-height:1.2; color:#0f172a;">Find a safe, compatible laptop charger in 30 seconds</h1>
+          <p style="margin:0 0 16px 0; color:#334155;">We stock brand-specific and universal USB‑C PD adapters, all safety-certified and backed by a 2‑year warranty.</p>
+          <ul style="margin:0 0 16px 16px; color:#334155;">
+            <li>Instant compatibility check by brand and model</li>
+            <li>UL-listed components with surge and short‑circuit protection</li>
+            <li>Same‑day dispatch on weekday orders before 2pm</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button mat-raised-button color="primary" style="background:#1e3a8a; color:#f8fafc; padding:0 20px; height:44px; border-radius:8px; font-weight:700;">Find my charger</button>
+            <button mat-stroked-button style="height:44px; border-radius:8px; border-color:#cbd5e1; color:#0f172a;">Browse all brands</button>
+          </div>
+          <p style="margin:12px 0 0 0; font-size:12px; color:#64748b;">Free shipping over $50. 30‑day hassle‑free returns.</p>
+        </div>
+      </div>
+    </mat-card>
+  </section>
+
+  <!-- Products by Brand -->
+  <section id="products" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#0f172a;">Shop by brand or connector type</h2>
+      <p style="margin:0 0 20px 0; color:#475569;">Pick your laptop brand to see the correct wattage, tip, and cord options.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="hover-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">
+          <mat-card-title>Apple</mat-card-title>
+          <mat-card-content>MagSafe 1/2 (45W–85W) and USB‑C PD (30W–140W) options.</mat-card-content>
+        </mat-card>
+        <mat-card class="hover-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">
+          <mat-card-title>Dell</mat-card-title>
+          <mat-card-content>45W, 65W, 90W, and 130W barrel‑tip chargers for Inspiron, XPS, and Precision.</mat-card-content>
+        </mat-card>
+        <mat-card class="hover-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">
+          <mat-card-title>HP</mat-card-title>
+          <mat-card-content>Smart‑pin adapters in common wattages with built‑in protections.</mat-card-content>
+        </mat-card>
+        <mat-card class="hover-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">
+          <mat-card-title>Lenovo</mat-card-title>
+          <mat-card-content>Square and round tip chargers for ThinkPad, IdeaPad, and Yoga.</mat-card-content>
+        </mat-card>
+        <mat-card class="hover-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">
+          <mat-card-title>Asus</mat-card-title>
+          <mat-card-content>Barrel‑tip and USB‑C PD options for Vivobook/Zenbook.</mat-card-content>
+        </mat-card>
+        <mat-card class="hover-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">
+          <mat-card-title>Acer</mat-card-title>
+          <mat-card-content>Reliable 45W–90W barrel‑tip adapters for Aspire and Nitro.</mat-card-content>
+        </mat-card>
+        <mat-card class="hover-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">
+          <mat-card-title>Microsoft Surface</mat-card-title>
+          <mat-card-content>Magnetic connector chargers for Surface Pro/Book/Laptop.</mat-card-content>
+        </mat-card>
+        <mat-card class="hover-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">
+          <mat-card-title>Universal USB‑C PD</mat-card-title>
+          <mat-card-content>Standards‑compliant USB‑C PD chargers that auto‑negotiate power.</mat-card-content>
+        </mat-card>
+      </div>
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-raised-button color="primary" style="background:#1e3a8a; color:#f8fafc;">See all compatible chargers</button>
+        <button mat-stroked-button style="border-color:#cbd5e1; color:#0f172a;">View universal USB‑C</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#64748b;">Brand names are used only to indicate compatibility; chargers are third‑party, safety‑certified.</p>
+    </div>
+  </section>
+
+  <!-- Compatibility -->
+  <section id="compatibility" style="padding:48px 16px; background:#f8fafc;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#0f172a;">Never guess your charger again</h2>
+      <p style="margin:0 0 16px 0; color:#475569;">Confirm in three quick steps, then add to cart with confidence.</p>
+      <ol style="margin:0 0 16px 20px; color:#334155;">
+        <li>Find your laptop's model on the bottom label or in system settings</li>
+        <li>Match the wattage (W) to your original or recommended spec</li>
+        <li>Select connector type: USB‑C PD, MagSafe, barrel, or Surface</li>
+      </ol>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-raised-button color="primary" style="background:#1e3a8a; color:#f8fafc;">Start compatibility check</button>
+        <button mat-stroked-button style="border-color:#cbd5e1; color:#0f172a;">Read the full guide</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#64748b;">We auto‑validate voltage and polarity. If it doesn't fit, we cover return shipping.</p>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section id="why" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#0f172a;">Safety first, compatibility guaranteed</h2>
+      <p style="margin:0 0 16px 0; color:#475569;">We focus only on laptop power—so you get the exact charger you need.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="hover-card" style="flex:1 1 260px; min-width:240px; border:1px solid #e2e8f0; border-radius:12px; padding:18px;">
+          <mat-card-title>Certified Safety</mat-card-title>
+          <mat-card-content>UL/CE/FCC certifications and thermal protection</mat-card-content>
+        </mat-card>
+        <mat-card class="hover-card" style="flex:1 1 260px; min-width:240px; border:1px solid #e2e8f0; border-radius:12px; padding:18px;">
+          <mat-card-title>Solid Warranty</mat-card-title>
+          <mat-card-content>2‑year limited warranty and lifetime tech support</mat-card-content>
+        </mat-card>
+        <mat-card class="hover-card" style="flex:1 1 260px; min-width:240px; border:1px solid #e2e8f0; border-radius:12px; padding:18px;">
+          <mat-card-title>Real Support</mat-card-title>
+          <mat-card-content>Local support team that actually answers</mat-card-content>
+        </mat-card>
+        <mat-card class="hover-card" style="flex:1 1 260px; min-width:240px; border:1px solid #e2e8f0; border-radius:12px; padding:18px;">
+          <mat-card-title>For IT Teams</mat-card-title>
+          <mat-card-content>Bulk pricing and invoicing for IT departments</mat-card-content>
+        </mat-card>
+      </div>
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-stroked-button style="border-color:#cbd5e1; color:#0f172a;">See safety standards</button>
+        <button mat-raised-button color="primary" style="background:#1e3a8a; color:#f8fafc;">Contact support</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#64748b;">Have a tricky model? Send a photo of your old adapter label—our team will confirm before you buy.</p>
+    </div>
+  </section>
+
+  <!-- Bundles / Pricing -->
+  <section id="bundles" style="padding:48px 16px; background:#f8fafc;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#0f172a;">Best‑selling chargers at honest prices</h2>
+      <p style="margin:0 0 20px 0; color:#475569;">Single units and value bundles—ready to ship today.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="hover-card" style="flex:1 1 300px; min-width:280px; border:1px solid #e2e8f0; border-radius:14px; padding:20px; background:#ffffff;">
+          <mat-card-title>Essential 65W USB‑C PD</mat-card-title>
+          <div style="margin:6px 0 10px 0; font-size:24px; color:#0f172a;">$29.99</div>
+          <ul style="padding-left:18px; margin:0 0 14px 0; color:#334155;">
+            <li>Works with most modern USB‑C laptops and tablets</li>
+            <li>Detachable 6.5 ft cable included</li>
+            <li>Over‑voltage and short‑circuit protection</li>
+          </ul>
+          <button mat-stroked-button style="width:100%; border-color:#cbd5e1; color:#0f172a; height:42px;">Add to cart</button>
+        </mat-card>
+
+        <mat-card class="hover-card" style="flex:1 1 300px; min-width:280px; border:2px solid #0f172a; border-radius:16px; padding:22px; background:#0f172a; color:#f8fafc; transform:translateY(-4px); box-shadow:0 12px 30px rgba(2,6,23,0.15);">
+          <mat-card-title style="color:#f8fafc;">MacBook 60W MagSafe 2 Kit</mat-card-title>
+          <div style="margin:6px 0 10px 0; font-size:24px; color:#f8fafc;">$39.99</div>
+          <ul style="padding-left:18px; margin:0 0 14px 0; color:#e2e8f0;">
+            <li>T‑tip connector for select MacBook/Pro/Air (2012–2015)</li>
+            <li>Adapter + wall extension cord</li>
+            <li>2‑year limited warranty</li>
+          </ul>
+          <button mat-raised-button color="primary" style="width:100%; height:44px; background:#f59e0b; color:#0b1a0f; font-weight:700;">Add to cart</button>
+        </mat-card>
+
+        <mat-card class="hover-card" style="flex:1 1 300px; min-width:280px; border:1px solid #e2e8f0; border-radius:14px; padding:20px; background:#ffffff;">
+          <mat-card-title>Dell 130W Barrel‑Tip</mat-card-title>
+          <div style="margin:6px 0 10px 0; font-size:24px; color:#0f172a;">$44.99</div>
+          <ul style="padding-left:18px; margin:0 0 14px 0; color:#334155;">
+            <li>7.4mm tip for XPS/Precision/Latitude</li>
+            <li>High‑output for performance laptops</li>
+            <li>Velcro tie and cord wrap included</li>
+          </ul>
+          <button mat-stroked-button style="width:100%; border-color:#cbd5e1; color:#0f172a; height:42px;">Add to cart</button>
+        </mat-card>
+
+        <mat-card class="hover-card" style="flex:1 1 300px; min-width:280px; border:1px solid #e2e8f0; border-radius:14px; padding:20px; background:#ffffff;">
+          <mat-card-title>Family Pack: 3× 65W USB‑C</mat-card-title>
+          <div style="margin:6px 0 10px 0; font-size:24px; color:#0f172a;">$79.99</div>
+          <ul style="padding-left:18px; margin:0 0 14px 0; color:#334155;">
+            <li>Outfit home, office, and backpack</li>
+            <li>Bundle savings vs single units</li>
+            <li>Mix‑and‑match cables available</li>
+          </ul>
+          <button mat-stroked-button style="width:100%; border-color:#cbd5e1; color:#0f172a; height:42px;">Add bundle to cart</button>
+        </mat-card>
+      </div>
+      <p style="margin:12px 0 0 0; font-size:12px; color:#64748b;">Brand names are for compatibility reference only.</p>
+    </div>
+  </section>
+
+  <!-- Shipping -->
+  <section id="shipping" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#0f172a;">Fast delivery and zero‑stress returns</h2>
+      <p style="margin:0 0 16px 0; color:#475569;">We keep it simple so you can power up sooner.</p>
+      <ul style="margin:0 0 16px 16px; color:#334155;">
+        <li>Same‑day dispatch on weekday orders before 2pm</li>
+        <li>Free standard shipping on orders over $50</li>
+        <li>30‑day hassle‑free returns—no restocking fees</li>
+        <li>2‑year limited warranty on every charger</li>
+      </ul>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-stroked-button style="border-color:#cbd5e1; color:#0f172a;">Read full policy</button>
+        <button mat-raised-button color="primary" style="background:#1e3a8a; color:#f8fafc;">Track my order</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#64748b;">Your tracking link arrives by email within minutes of shipment.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" style="padding:48px 16px; background:#f8fafc;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#0f172a;">Trusted by students, freelancers, and IT teams</h2>
+      <p style="margin:0 0 16px 0; color:#475569;">Real reviews from verified buyers.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="hover-card" style="flex:1 1 320px; min-width:280px; border:1px solid #e2e8f0; border-radius:12px; padding:18px; background:#ffffff;">
+          <p style="margin:0 0 6px 0; color:#0f172a; font-weight:700;">Lena M. — Freelance Designer</p>
+          <p style="margin:0; color:#334155;">“Found a 65W USB‑C charger that just works. Shipping was fast and the cable feels solid.”</p>
+        </mat-card>
+        <mat-card class="hover-card" style="flex:1 1 320px; min-width:280px; border:1px solid #e2e8f0; border-radius:12px; padding:18px; background:#ffffff;">
+          <p style="margin:0 0 6px 0; color:#0f172a; font-weight:700;">Jordan P. — IT Coordinator</p>
+          <p style="margin:0; color:#334155;">“Bulk‑ordered Dell and HP adapters—every unit matched specs and the packaging was neat for inventory.”</p>
+        </mat-card>
+        <mat-card class="hover-card" style="flex:1 1 320px; min-width:280px; border:1px solid #e2e8f0; border-radius:12px; padding:18px; background:#ffffff;">
+          <p style="margin:0 0 6px 0; color:#0f172a; font-weight:700;">Samir R. — Student</p>
+          <p style="margin:0; color:#334155;">“Their compatibility checker told me exactly which MagSafe I needed. Zero guesswork.”</p>
+        </mat-card>
+      </div>
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-stroked-button style="border-color:#cbd5e1; color:#0f172a;">See more reviews</button>
+        <button mat-raised-button color="primary" style="background:#1e3a8a; color:#f8fafc;">Share your experience</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#64748b;">Reviews are moderated for accuracy and relevance.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#0f172a;">We specialize in one thing: safe laptop power</h2>
+      <p style="margin:0 0 16px 0; color:#475569;">By focusing solely on chargers, we stock the right wattages, tips, and safety features—nothing extra.</p>
+      <ul style="margin:0 0 16px 16px; color:#334155;">
+        <li>Curated catalog built from warranty data and failure testing</li>
+        <li>Direct relationships with certified manufacturers</li>
+        <li>Human support from a team that actually uses these products</li>
+      </ul>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-raised-button color="primary" style="background:#1e3a8a; color:#f8fafc;">Meet the team</button>
+        <button mat-stroked-button style="border-color:#cbd5e1; color:#0f172a;">Our testing process</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#64748b;">Based in Austin, TX. Serving customers nationwide.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding:48px 16px; background:#f8fafc;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#0f172a;">Got questions? We're here to help</h2>
+      <p style="margin:0 0 16px 0; color:#475569;">Answers to the most common charger questions.</p>
+      <mat-accordion multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>Can a higher‑wattage charger damage my laptop?</span>
+          </mat-expansion-panel-header>
+          <p style="margin:0; color:#334155;">No—the device draws only what it needs, as long as voltage and connector are correct.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>How do I know my wattage?</span>
+          </mat-expansion-panel-header>
+          <p style="margin:0; color:#334155;">Check the original adapter label or your laptop's power specs.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>Do you sell OEM?</span>
+          </mat-expansion-panel-header>
+          <p style="margin:0; color:#334155;">We offer trusted third‑party chargers that meet or exceed OEM safety standards.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>International plugs?</span>
+          </mat-expansion-panel-header>
+          <p style="margin:0; color:#334155;">Add a travel plug at checkout for supported regions. Email support at support&#64;fastchargesupply.com for region advice.</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-raised-button color="primary" style="background:#1e3a8a; color:#f8fafc;">Contact support</button>
+        <button mat-stroked-button style="border-color:#cbd5e1; color:#0f172a;">Compatibility guide</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#64748b;">Email support at support&#64;fastchargesupply.com. We reply within one business day.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#0f172a; color:#e2e8f0;">
+    <div style="max-width:1100px; margin:0 auto; padding:28px 16px; display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; justify-content:space-between;">
+      <div style="min-width:240px;">
+        <div style="font-weight:800; margin-bottom:6px;">FASTCHARGE SUPPLY</div>
+        <div style="font-size:13px; color:#94a3b8;">FastCharge Supply provides certified, reliable laptop chargers with a perfect‑fit guarantee, fast shipping, and responsive human support.</div>
+      </div>
+      <div style="display:flex; gap:32px; flex-wrap:wrap;">
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#f1f5f9;">Products</div>
+          <a href="#hero" (click)="$event.preventDefault(); scrollTo('hero')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Find your charger</a>
+          <a href="#products" (click)="$event.preventDefault(); scrollTo('products')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">USB‑C chargers</a>
+          <a href="#products" (click)="$event.preventDefault(); scrollTo('products')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">MagSafe chargers</a>
+          <a href="#products" (click)="$event.preventDefault(); scrollTo('products')" style="display:block; text-decoration:none; color:#cbd5e1;">Barrel‑tip chargers</a>
+        </div>
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#f1f5f9;">Company</div>
+          <a href="#about" (click)="$event.preventDefault(); scrollTo('about')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">About us</a>
+          <a href="#faq" (click)="$event.preventDefault(); scrollTo('faq')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Support</a>
+          <a href="#shipping" (click)="$event.preventDefault(); scrollTo('shipping')" style="display:block; text-decoration:none; color:#cbd5e1;">Shipping & returns</a>
+        </div>
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#f1f5f9;">Legal</div>
+          <a href="#" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Terms of service</a>
+          <a href="#" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Privacy policy</a>
+          <a href="#" style="display:block; text-decoration:none; color:#cbd5e1;">Cookie policy</a>
+        </div>
+      </div>
+    </div>
+    <mat-divider style="border-top-color:#1f2937;"></mat-divider>
+    <div style="max-width:1100px; margin:0 auto; padding:14px 16px; font-size:12px; color:#94a3b8;">© 2025 fastcharge-supply. All rights reserved.</div>
+  </footer>
+</div>
